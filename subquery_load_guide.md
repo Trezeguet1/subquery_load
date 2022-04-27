@@ -2,9 +2,9 @@
 1. run pycharm
 2. open subquery_load
 3. rename docker-compose.yml
-4. reanme docker-compose.yml
+4. rename locust_run.py
 5. edit host = "https://api.subquery.network/sq/soramitsu" in locust_run.py
-6. change  strings
+6. change  strings in locust_run.py
 
 def stake_changes(self):
 data = json.dumps(stake_changes_by_address(self.address))
