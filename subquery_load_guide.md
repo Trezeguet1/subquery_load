@@ -20,4 +20,4 @@ data = json.dumps(history_changes_by_address(self.address))
 8. run locust master
 9. run locust-worker-1
 10. run locust-worker-2
-11 view test results
+11. view test results
