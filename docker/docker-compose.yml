@@ -56,6 +56,24 @@ services:
         max-file: "3"
     command: -f locust_run.py --worker --master-host=locust-master --users ${USERS} --spawn-rate ${RAMP_UP} --tags ${TAGS}
 
+locust-worker-3:
+    build: ./
+    image: subquery-locust-load
+    working_dir: /locust
+    networks:
+      - locust
+    volumes:
+      - ../src:/locust
+    environment:
+      - "WAIT_TIME=${WAIT_TIME}"
+    depends_on:
+      - locust-master
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
+    command: -f locust_run.py --worker --master-host=locust-master --users ${USERS} --spawn-rate ${RAMP_UP} --tags ${TAGS}
 
 networks:
   locust:
