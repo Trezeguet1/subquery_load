@@ -1,5 +1,5 @@
 # subquery_load_guide
-1.Run IDE PyCharm CE
+1. Run IDE PyCharm CE
 2. Clone and open subquery_load project GitHub - stepanLav/subquery_load
 3. Run services in docker-compose.yml
 4. Edit host = "https://api.subquery.network/sq/soramitsu" in locust_run.py
