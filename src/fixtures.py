@@ -8,3 +8,4 @@ def history_changes_by_address(address):
 
 def validator_info_by_address(address):
     query = '{\n    eraValidatorInfos(filter:{ \(eraFilter) others:{contains:[{who:\"\(accountAddress)\"}]}}) {nodes {id address era }}}' % (address)
+    return {"query": query}
