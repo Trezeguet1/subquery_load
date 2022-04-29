@@ -1,23 +1,19 @@
 # subquery_load_guide
-1. run pycharm
-2. open subquery_load
-3. rename docker-compose.yml
-4. rename locust_run.py
-5. edit host = "https://api.subquery.network/sq/soramitsu" in locust_run.py
-6. change  strings in locust_run.py
+1.Run IDE PyCharm CE
+2. Clone and open subquery_load project GitHub - stepanLav/subquery_load
+3. Run services in docker-compose.yml
+4. Edit host = "https://api.subquery.network/sq/soramitsu" in locust_run.py
 
-def stake_changes(self):
-data = json.dumps(stake_changes_by_address(self.address))
-        self.client.post('/fearless-wallet-dot', data=data, headers=self.headers)
+class QuickstartUser(HttpUser):
+    wait_time = constant(float(os.environ.get('WAIT_TIME', 1)))
+    host = "https://api.subquery.network/sq/soramitsu"
 
-@tag('history_elements')
-@task
-def history_elements(self):
-data = json.dumps(history_changes_by_address(self.address))
-        self.client.post('/fearless-wallet-dot', data=data, headers=self.headers)
+5. Replace '/fearless-wallet-dot' for 22&28 strings in locust_run.py
+   
+self.client.post('/fearless-wallet-dot', data=data, headers=self.headers)
 
-7. run services
-8. run locust master
-9. run locust-worker-1
-10. run locust-worker-2
-11. view test results
+6. Run services in docker-compose.yml again
+7. Expand Docker Compose and run locust master
+8. Run locust-worker-1
+9. Run locust-worker-2
+10. Check test results
