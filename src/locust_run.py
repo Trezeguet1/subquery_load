@@ -26,3 +26,13 @@ class QuickstartUser(HttpUser):
     def history_elements(self):
         data = json.dumps(history_changes_by_address(self.address))
         self.client.post('/fearless-wallet-dot', data=data, headers=self.headers)
+
+    @tag('validator_info')
+
+    @task
+
+    def validator_info(self):
+
+        data = json.dumps(validator_info_by_address(self.address))
+
+        self.client.post('/fearless-wallet', data=data, headers=self.headers)
