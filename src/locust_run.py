@@ -35,4 +35,4 @@ class QuickstartUser(HttpUser):
 
         data = json.dumps(validator_info_by_address(self.address))
 
-        self.client.post('/fearless-wallet', data=data, headers=self.headers)
+        self.client.post('/fearless-wallet-dot', data=data, headers=self.headers)
