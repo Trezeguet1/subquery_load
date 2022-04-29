@@ -5,3 +5,6 @@ def stake_changes_by_address(address):
 def history_changes_by_address(address):
     query = '{\n    historyElements(orderBy: TIMESTAMP_ASC, filter:{not:{ reward:{equalTo:\"null\"}}, address:{equalTo:\"%s\"},}) {nodes {id timestamp address reward }}}' % (address)
     return {"query": query}
+
+def validator_info_by_address(address):
+    query = '{\n    eraValidatorInfos(filter:{ \(eraFilter) others:{contains:[{who:\"\(accountAddress)\"}]}}) {nodes {id address era }}}' % (address)
