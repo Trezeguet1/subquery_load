@@ -4,7 +4,7 @@ import os
 from locust import HttpUser, task, between, events
 from locust.user.task import tag
 from locust.user.wait_time import constant
-from fixtures import stake_changes_by_address, history_changes_by_address
+from fixtures import stake_changes_by_address, history_changes_by_address, validator_info_by_address
 
 
 class QuickstartUser(HttpUser):
