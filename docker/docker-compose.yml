@@ -56,7 +56,7 @@ services:
         max-file: "3"
     command: -f locust_run.py --worker --master-host=locust-master --users ${USERS} --spawn-rate ${RAMP_UP} --tags ${TAGS}
 
-locust-worker-3:
+  locust-worker-3:
     build: ./
     image: subquery-locust-load
     working_dir: /locust
